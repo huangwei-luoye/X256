@@ -1,0 +1,5 @@
+*.[ao]
+/bin/log
+/bin/src_data
+/debug
+/release

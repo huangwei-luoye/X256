@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/">
+        <file>qss/navy.css</file>
+        <file>qss/widget_log_style.css</file>
+        <file>qss/widget_log_image/icon_log.png</file>
+    </qresource>
+</RCC>

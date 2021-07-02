@@ -1,0 +1,41 @@
+QWidget{
+    color:#F0F0F0;
+    background:#0C6AAC;
+}
+
+QToolButton{
+    font:13px;
+    color:#F0F0F0;
+    border-style:solid;
+    border-width:0px 0px 1px 0px;
+    border-color:rgba(171,214,255,30);
+    padding: 2px;
+    background:qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 #0F7DBE, stop:1 #1582C3);
+}
+QToolButton:hover{
+    background: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 #50A3F0, stop:1 #489CEA);
+}
+QToolButton:presse{
+    background: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 #0F7DBE, stop:1 #1582C3);
+}
+
+QToolButton:checked{
+    color:#FFFFFF;
+    border-style:solid;
+    border-width:0px 4px 0px 0px;
+    border-color:#00B7DE;
+    padding:8px 4px 8px 8px;
+    background:qlineargradient(spread:pad,x1:0,y1:0,x2:0,y2:1,stop:0 #00326B,stop:1 #00346D);
+}
+
+QWidget#widget{
+    border-style:solid;
+    border-width:1px 0px 0px 0px;
+    border-color:rgba(171,214,255,30);
+    background:qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 #0F7DBE, stop:1 #1582C3);
+}
+
+QLabel#label_icon{
+    background-color:rgba(0,0,255,0);/*bg tou ming*/
+    /*image:url(:/qss/widget_log_image/icon_log.png);*/
+}
