@@ -383,7 +383,8 @@ QList<QPointF> myHelper::BumaTosrcma(const QByteArray &data, quint32 start, quin
          shortData |= (quint8)data.at(i+1)&0xFF;
          mask = shortData & (1<<15);
          tempData = mask?((shortData^0xFFFF)+1)*(-1):shortData;
-         listPoint.append(QPointF(j*2,tempData*lainghuajindu*jiaozhunxishu));
+         //listPoint.append(QPointF(j*2,tempData*lainghuajindu*jiaozhunxishu));
+         listPoint.append(QPointF(j*2,tempData));
          j++;
     }
     return listPoint;
@@ -408,6 +409,38 @@ QList<qint16> myHelper::BumaTosrcmaToList(const QByteArray &data)
          j++;
     }
     return list;
+}
+
+QList<QPointF> myHelper::PianYiMaToYuanMa(const QByteArray &data)
+{
+    QList<QPointF> list;
+    quint16 shortData = 0;
+    qint16 tempData = 0;
+    quint16 mask = 0;
+    qint32 j = 0;
+    quint32 waveLength;
+
+    if(data.size() > 2000){
+        waveLength = 2000;
+    }else{
+        waveLength = data.size();
+    }
+    for(qint32 i = 0; i < waveLength; i+=2)
+    {
+         shortData = 0;
+         shortData = ((quint8)data.at(i)<<8);
+         shortData |= (quint8)data.at(i+1)&0xFF;
+         if(shortData > 8192){
+             tempData = (16384 - shortData) * (-1);
+         }else{
+             tempData = shortData;
+         }
+         list.append(QPointF(j*2,tempData));
+         j++;
+    }
+    return list;
+
+
 }
 
 void SetUTF8Code()

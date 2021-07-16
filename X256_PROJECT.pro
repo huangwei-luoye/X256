@@ -33,7 +33,15 @@ SOURCES += main.cpp\
     public/iconhelper.cpp \
     gui/cwavewidget.cpp \
     gui/chartview.cpp \
-    gui/imagewidget.cpp
+    gui/imagewidget.cpp \
+    public/cdatahandleclass.cpp \
+    gui/adcwidget.cpp \
+    public/switchbutton.cpp \
+    gui/zujianwidget.cpp \
+    public/statusinfomation.cpp \
+    controlservice/volcalibration.cpp \
+    controlservice/systemminitorservice.cpp \
+    public/paramrangmanage.cpp
 
 HEADERS  += mainwindow.h \
     public/appinit.h \
@@ -50,12 +58,22 @@ HEADERS  += mainwindow.h \
     public/iconhelper.h \
     gui/cwavewidget.h \
     gui/chartview.h \
-    gui/imagewidget.h
+    gui/imagewidget.h \
+    public/cdatahandleclass.h \
+    gui/adcwidget.h \
+    public/switchbutton.h \
+    gui/zujianwidget.h \
+    public/statusinfomation.h \
+    controlservice/volcalibration.h \
+    controlservice/systemminitorservice.h \
+    public/paramrangmanage.h
 
 FORMS    += mainwindow.ui \
     LogOpreate/LogOperateWidget.ui \
     gui/cwavewidget.ui \
-    gui/imagewidget.ui
+    gui/imagewidget.ui \
+    gui/adcwidget.ui \
+    gui/zujianwidget.ui
 
 RESOURCES += \
     main.qrc \

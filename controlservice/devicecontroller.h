@@ -6,7 +6,6 @@
 #include <QFile>
 #include "./cexperimentfileoperat.h"
 
-
 class DeviceController : public QObject
 {
     Q_OBJECT

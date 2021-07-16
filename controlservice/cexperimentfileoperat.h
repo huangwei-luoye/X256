@@ -20,7 +20,7 @@ public:
     void MainThreadAppendArrayData(const QByteArray &data);
 
 signals:
-
+    void RecvAdcDataFinishSignal();
 public slots:
 
 private:

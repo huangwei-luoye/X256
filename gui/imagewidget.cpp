@@ -3,6 +3,7 @@
 #include <QGridLayout>
 #include <QPalette>
 #include <QDebug>
+#include <QToolTip>
 
 ImageWidget::ImageWidget(QWidget *parent) :
     QWidget(parent),
@@ -29,7 +30,13 @@ void ImageWidget::SetImageColor(QList<quint8> &list)
         rgb = list.at(i.key());
         palette.setColor(QPalette::Background, QColor(rgb, rgb, rgb));
         pLabel->setPalette(palette);
+        pLabel->setToolTip(QString("%1").arg(rgb));
     }
+}
+
+bool ImageWidget::eventFilter(QObject *obj, QEvent *evt)
+{
+
 }
 
 
@@ -42,11 +49,11 @@ void ImageWidget::InitForm()
 
     for(i = 0; i < 16; i++){
         for(j = 0; j < 16; j++){
-            pLable = new QLabel;
+            pLable = new QLabel(this);
             pLable->setAutoFillBackground(true);
             pLable->setFocusPolicy(Qt::TabFocus);
             pLayout->addWidget(pLable, i, j);
-            pLayout->setSpacing(0);
+            pLayout->setSpacing(5);
             m_LableMap.insert(k++, pLable);
         }
     }

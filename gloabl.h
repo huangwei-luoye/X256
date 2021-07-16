@@ -37,7 +37,7 @@ typedef struct _ZHUANG_TAI_ACK{
     BaseCommodHead bc_head;
     quint8 work_status;
     quint8 liucheng_status;
-    quint8 adc_16status;/*16片ADC，每片对应一个bit 1：异常 0：正常*/
+    quint16 adc_16status;/*16片ADC，每片对应一个bit 1：异常 0：正常*/
     quint32 dianya_output_status;/*26路电压输出状态，低26位有效 1：开启 0：关闭*/
     quint8 dianliu_result[52];/*26路电流结果*/
     quint8 dianya_result[52];/*26路电压结果*/
@@ -52,11 +52,11 @@ typedef struct _ZHUANG_TAI_ACK{
 typedef struct _CAN_SHU_SET{
     BaseCommodHead bc_head;
     quint16 caijidianshu;
-    quint8 zengyizhi[256];
-    quint8 dianyacanshu1[16];
-    quint8 dianyacanshu2[12];
-    quint8 dianyacanshu3[12];
-    quint8 dianyacanshu4[12];
+    quint16 zengyizhi[128] = {0};
+    quint16 dianyacanshu1[8] = {0};
+    quint16 dianyacanshu2[6] = {0};
+    quint16 dianyacanshu3[6] = {0};
+    quint16 dianyacanshu4[6] = {0};
     quint8 yuliu[6] = {0};
 }CanShuSetInfo;
 
@@ -65,7 +65,7 @@ typedef struct _CAN_SHU_SET{
 /*开始上传应答*/
 typedef struct _SHANG_CHUAN_ACK{
     BaseCommodHead bc_head;
-    quint8 caiji_result[512];
+    quint16 caiji_result[256];
     quint8 yuliu[4];
 }ShangChuanAck;
 

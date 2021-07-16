@@ -15,6 +15,14 @@ INPUT(
 ./debug\cwavewidget.o
 ./debug\chartview.o
 ./debug\imagewidget.o
+./debug\cdatahandleclass.o
+./debug\adcwidget.o
+./debug\switchbutton.o
+./debug\zujianwidget.o
+./debug\statusinfomation.o
+./debug\volcalibration.o
+./debug\systemminitorservice.o
+./debug\paramrangmanage.o
 ./debug\qrc_main.o
 ./debug\qrc_qss.o
 ./debug\moc_mainwindow.o
@@ -29,4 +37,10 @@ INPUT(
 ./debug\moc_iconhelper.o
 ./debug\moc_cwavewidget.o
 ./debug\moc_imagewidget.o
+./debug\moc_cdatahandleclass.o
+./debug\moc_adcwidget.o
+./debug\moc_switchbutton.o
+./debug\moc_zujianwidget.o
+./debug\moc_statusinfomation.o
+./debug\moc_systemminitorservice.o
 );

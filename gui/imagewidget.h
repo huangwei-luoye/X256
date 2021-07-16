@@ -21,6 +21,8 @@ public:
 public slots:
     void SetImageColor(QList<quint8> &list);
 
+protected:
+    bool eventFilter(QObject *obj, QEvent *evt);
 private:
     Ui::ImageWidget *ui;
     void InitForm();

@@ -19,6 +19,8 @@
 #include <QDebug>
 #include <QTimer>
 
+
+
 /*描述：辅助类，包含对话框，中文显示，文件处理等
  *作者：huangwei
  *时间：2013-12-12
@@ -71,6 +73,7 @@ public:
     static QList<QPointF> BumaTosrcma(const QByteArray &data);//补码转换成源码，两个字节为一个数据
     static QList<QPointF> BumaTosrcma(const QByteArray &data, quint32 start, quint32 end);//补码转换成源码，两个字节为一个数据
     static QList<qint16> BumaTosrcmaToList(const QByteArray &data);
+    static QList<QPointF> PianYiMaToYuanMa(const QByteArray &data);//偏移码转源码
 
 };
 

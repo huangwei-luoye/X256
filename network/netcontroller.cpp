@@ -3,6 +3,7 @@
 #include <QHostAddress>
 #include <QDir>
 #include <QDateTime>
+#include "../public/myhelper.h"
 
 NetController::NetController(QObject *parent) : QObject(parent)
 {
@@ -66,7 +67,7 @@ bool NetController::OnConnectTcpNetwork(const QString &ip, quint16 port)
     //connect(m_pTcpSocket,SIGNAL(stateChanged(QAbstractSocket::SocketState)),this, SLOT(OnNetStatus(QAbstractSocket::SocketState)));
 
     m_pTcpSocket->connectToHost(ip, port);
-    if(!m_pTcpSocket->waitForConnected(2000))
+    if(!m_pTcpSocket->waitForConnected(1000))
     {
         emit TcpNetControllErrSignal(ErrConnect);
         return false;
@@ -144,7 +145,7 @@ void NetController::OnNewClient()
 void NetController::OnProcessTcpReadData()
 {
     QByteArray netData = m_pTcpSocket->readAll();
-    //qDebug()<<CTools::ByteArrayToString(netData);
+    //qDebug()<<myHelper::ByteArrayToHexStr(netData);
     //qDebug()<<netData.size();
     if(!netData.isEmpty())
     {

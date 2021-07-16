@@ -183,7 +183,7 @@ void CExperimentFileOperat::OnSaveDateToFile(const QString FileName)
                 }
             }
         }
-        //emit
+        emit RecvAdcDataFinishSignal();
         pFile->flush();
         pFile->close();
         delete pFile;

@@ -4,6 +4,8 @@
 #include <QMainWindow>
 #include <QTimer>
 #include "./public/cwaitobject.h"
+#include "./gui/zujianwidget.h"
+#include "./gui/adcwidget.h"
 #include <QList>
 
 namespace Ui {
@@ -24,8 +26,7 @@ public slots:
     void TimeOutSlot();
 
 private slots:
-    void on_pushButton_status_chaxun_clicked();
-    void OnChaXunAck(const QByteArray &data);
+    //void on_pushButton_status_chaxun_clicked();
     void OnCanShuSetAck(const QByteArray &data);
     void OnStartCollectAck(const QByteArray &data);
 
@@ -52,15 +53,21 @@ private slots:
 
     void OnToolClicked();
 
+    void on_pushButton_dianya_set_clicked();
+
+    void OnUpdateStatus();
 
 private:
     Ui::MainWindow *ui;
-    QTimer m_timer;
+    QTimer m_timer;/*定时连网*/
     CWaitObject m_waitObject;
+    QMap<quint8, ZuJianWidget* > m_ZuJianVolMap;
+    QMap<quint8, AdcWidget * > m_adcWidgetMap;
 
     void InitUI();
     void InitToolsButton();
     void InitNet();
+    void InitZuJian();
 };
 
 #endif // MAINWINDOW_H

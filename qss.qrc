@@ -3,5 +3,6 @@
         <file>qss/navy.css</file>
         <file>qss/widget_log_style.css</file>
         <file>qss/widget_log_image/icon_log.png</file>
+        <file>qss/zujian_widget.css</file>
     </qresource>
 </RCC>

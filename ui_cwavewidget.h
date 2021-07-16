@@ -13,9 +13,10 @@
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
+#include <QtWidgets/QComboBox>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
-#include <QtWidgets/QPushButton>
+#include <QtWidgets/QLabel>
 #include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
@@ -26,37 +27,54 @@ class Ui_CWaveWidget
 {
 public:
     QVBoxLayout *verticalLayout;
-    QHBoxLayout *horizontalLayout;
-    QHBoxLayout *horizontalLayout_2;
+    QWidget *widget;
+    QHBoxLayout *horizontalLayout_1;
     QSpacerItem *horizontalSpacer;
-    QPushButton *pushButton_open_file;
+    QLabel *label;
+    QComboBox *comboBox;
+    QSpacerItem *horizontalSpacer_2;
 
     void setupUi(QWidget *CWaveWidget)
     {
         if (CWaveWidget->objectName().isEmpty())
             CWaveWidget->setObjectName(QStringLiteral("CWaveWidget"));
-        CWaveWidget->resize(685, 451);
+        CWaveWidget->resize(694, 476);
+        CWaveWidget->setAutoFillBackground(false);
+        CWaveWidget->setStyleSheet(QStringLiteral(""));
         verticalLayout = new QVBoxLayout(CWaveWidget);
+        verticalLayout->setSpacing(0);
         verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
-        horizontalLayout = new QHBoxLayout();
-        horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
+        verticalLayout->setContentsMargins(0, 0, 0, 0);
+        widget = new QWidget(CWaveWidget);
+        widget->setObjectName(QStringLiteral("widget"));
+        widget->setStyleSheet(QStringLiteral("background-color: rgb(0,0,255,0);"));
 
-        verticalLayout->addLayout(horizontalLayout);
+        verticalLayout->addWidget(widget);
 
-        horizontalLayout_2 = new QHBoxLayout();
-        horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
+        horizontalLayout_1 = new QHBoxLayout();
+        horizontalLayout_1->setObjectName(QStringLiteral("horizontalLayout_1"));
         horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
-        horizontalLayout_2->addItem(horizontalSpacer);
+        horizontalLayout_1->addItem(horizontalSpacer);
 
-        pushButton_open_file = new QPushButton(CWaveWidget);
-        pushButton_open_file->setObjectName(QStringLiteral("pushButton_open_file"));
-        pushButton_open_file->setMinimumSize(QSize(80, 0));
+        label = new QLabel(CWaveWidget);
+        label->setObjectName(QStringLiteral("label"));
+        label->setMinimumSize(QSize(0, 0));
 
-        horizontalLayout_2->addWidget(pushButton_open_file);
+        horizontalLayout_1->addWidget(label);
+
+        comboBox = new QComboBox(CWaveWidget);
+        comboBox->setObjectName(QStringLiteral("comboBox"));
+        comboBox->setMinimumSize(QSize(80, 0));
+
+        horizontalLayout_1->addWidget(comboBox);
+
+        horizontalSpacer_2 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_1->addItem(horizontalSpacer_2);
 
 
-        verticalLayout->addLayout(horizontalLayout_2);
+        verticalLayout->addLayout(horizontalLayout_1);
 
 
         retranslateUi(CWaveWidget);
@@ -67,7 +85,7 @@ public:
     void retranslateUi(QWidget *CWaveWidget)
     {
         CWaveWidget->setWindowTitle(QApplication::translate("CWaveWidget", "Form", Q_NULLPTR));
-        pushButton_open_file->setText(QApplication::translate("CWaveWidget", "\346\265\217\350\247\210", Q_NULLPTR));
+        label->setText(QApplication::translate("CWaveWidget", "\346\230\276\347\244\272\351\200\232\351\201\223\357\274\232", Q_NULLPTR));
     } // retranslateUi
 
 };

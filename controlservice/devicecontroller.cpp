@@ -1,12 +1,16 @@
 #include "devicecontroller.h"
 #include <QDir>
 #include <QDateTime>
-
+#include "./public/cdatahandleclass.h"
 
 DeviceController::DeviceController(QObject *parent) : QObject(parent)
 {
     connect(this, SIGNAL(StartFileThreadSignal(QString)), &m_FileOperate, SLOT(OnSaveDateToFile(QString)));
+    connect(&m_TcpMonitorCtrl, SIGNAL(TcpProcessReciveDataSignal(QByteArray)), this, SIGNAL(ProcessMonitorDataSignal(QByteArray)));
     connect(&m_TcpWaveCtrl, SIGNAL(TcpProcessReciveDataSignal(QByteArray)), this, SLOT(OnRecvSrcFile(QByteArray)));
+    connect(&m_TcpWaveCtrl, SIGNAL(TcpProcessReciveDataSignal(QByteArray)), CDataHandleClass::getInstance(), SLOT(OnRecvWaveData(QByteArray)));
+    connect(&m_FileOperate, SIGNAL(RecvAdcDataFinishSignal()), CDataHandleClass::getInstance(), SLOT(HandleWaveData()));
+
 }
 
 DeviceController::~DeviceController()

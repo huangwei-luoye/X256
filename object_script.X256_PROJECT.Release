@@ -15,6 +15,14 @@ INPUT(
 ./release\cwavewidget.o
 ./release\chartview.o
 ./release\imagewidget.o
+./release\cdatahandleclass.o
+./release\adcwidget.o
+./release\switchbutton.o
+./release\zujianwidget.o
+./release\statusinfomation.o
+./release\volcalibration.o
+./release\systemminitorservice.o
+./release\paramrangmanage.o
 ./release\qrc_main.o
 ./release\qrc_qss.o
 ./release\moc_mainwindow.o
@@ -29,4 +37,10 @@ INPUT(
 ./release\moc_iconhelper.o
 ./release\moc_cwavewidget.o
 ./release\moc_imagewidget.o
+./release\moc_cdatahandleclass.o
+./release\moc_adcwidget.o
+./release\moc_switchbutton.o
+./release\moc_zujianwidget.o
+./release\moc_statusinfomation.o
+./release\moc_systemminitorservice.o
 );

@@ -2,7 +2,7 @@
 
 CWaitObject::CWaitObject(QObject *parent) : QObject(parent)
 {
-       m_nInterval = 5000;
+       m_nInterval = 10000;
        m_isRunning = false;
        connect(&m_delayr, SIGNAL(timeout()), this, SLOT(slotTimeout()));
        m_delayr.setSingleShot(true);

@@ -20,8 +20,9 @@ public:
     ~CWaveWidget();
 
 private slots:
-    void on_pushButton_open_file_clicked();
-
+    //void on_pushButton_open_file_clicked();
+    void on_comboBox_currentIndexChanged(int index);
+    void OnRefreshWave();
 private:
     Ui::CWaveWidget *ui;
     void InitForm();
